@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Home</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            background-image: url('{{ url_for('static', filename='images/npi58wwn8hp51.webp') }}');
+            background-size: cover;
+            background-position: -100px center;
+            color: white;
+            text-align: center;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .home-container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+            background: rgba(80, 118, 221, 0);
+            border-radius: 10px;
+            box-shadow: 0px 0px 50px rgba(65, 62, 255, 0);
+        }
+        .d-flex {
+            display: flex; /* Enables Flexbox */
+            justify-content: center; /* Centers the buttons horizontally */
+            gap: 20px; /* Adds spacing between the buttons */
+        }
+        .btn-square {
+            width: 150px; /* Makes the button square */
+            height: 150px; /* Makes the button square */
+            display: flex; /* Enables Flexbox */
+            flex-direction: column; /* Stacks content vertically */
+            justify-content: flex-end; /* Aligns text to the bottom */
+            align-items: center; /* Centers text horizontally */
+            text-align: center; /* Ensures text is centered */
+            border-radius: 10px; /* Optional: Adds slightly rounded corners */
+            font-size: 16px; /* Adjusts font size for better readability */
+            font-weight: bold; /* Makes the text bold */
+            color: white; /* Text color */
+            background-size: cover; /* Ensures the image covers the button */
+            background-position: center; /* Centers the image */
+            background-repeat: no-repeat; /* Prevents the image from repeating */
+            border: none; /* Removes default button border */
+            padding: 0; /* Removes extra padding */
+            position: relative; /* Allows positioning of text */
+            overflow: hidden; /* Ensures content stays inside the button */
+        }
+
+        .btn-square span {
+            background-color: rgba(0, 0, 0, 0.5); /* Adds a semi-transparent background for text */
+            padding: 5px 10px; /* Adds padding around the text */
+            border-radius: 5px; /* Optional: Adds rounded corners to the text background */
+            position: absolute; /* Positions the text */
+            bottom: 10px; /* Moves the text to the bottom of the button */
+            color: white; /* Ensures text color is readable */
+            font-weight: bold; /* Makes the text bold */
+            z-index: 2; /* Ensures the text is above the background image */
+        }
+
+        .btn-general {
+            background-image: url('{{ url_for('static', filename='images/knowledge-background-design_1300-109.avif') }}'); /* Background image for General Knowledge */
+            color : blue;
+            font-weight: bold; /* Makes the text bold */
+        }
+        .btn-python {
+            background-image: url('{{ url_for('static', filename='images/0_pU8l4-u0s1flFQiU.png') }}'); 
+        }
+        .btn-math {
+            background-image: url('{{ url_for('static', filename='images/istockphoto-1219382595-612x612.jpg') }}'); /* Background image for Math */
+        }
+        .btn-tech {
+            background-image: url('{{ url_for('static', filename='images/360_F_308697506_9dsBYHXm9FwuW0qcEqimAEXUvzTwfzwe.jpg') }}'); /* Background image for Technology */
+        }
+    </style>
+</head>
+<body>
+    <div class="home-container">
+        <img src="{{ url_for('static', filename='images/images.jpg') }}" alt="Quiz Logo" class="img-fluid">
+        <h1>Welcome to the Quiz App!</h1>
+        <p>Select a category to start the quiz:</p>
+        <div class="d-flex">
+            <a href="{{ url_for('category', category_name='general') }}" class="btn btn-square btn-general">
+                <span>General Knowledge</span>
+            </a>
+            <a href="{{ url_for('category', category_name='python') }}" class="btn btn-square btn-python">
+                <span>Python Programming</span>
+            </a>
+            <a href="{{ url_for('category', category_name='math') }}" class="btn btn-square btn-math">
+                <span>Math</span>
+            </a>
+            <a href="{{ url_for('category', category_name='tech') }}" class="btn btn-square btn-tech">
+                <span>Technology</span>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
